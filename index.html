@@ -485,8 +485,8 @@ var _hmt = _hmt || [];
         var d2 = new Date();
         //每学期都需要在这里设置一下开学日期
         d2.setFullYear(2022);
-        d2.setMonth(1); //春季学期填写“1”，秋季学期填写“8”，因为月份是0-11,0为1月，以此类推
-        d2.setDate(13); //d2 为该学期第0周周日
+        d2.setMonth(8); //春季学期填写“1”，秋季学期填写“8”，因为月份是0-11,0为1月，以此类推
+        d2.setDate(11); //d2 为该学期第0周周日
         var rq = d1-d2;
         var n1 = Math.ceil(rq/(24*60*60*1000));
         var n2 = Math.ceil(n1/7);//计算第几周
