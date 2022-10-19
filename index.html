@@ -15,6 +15,7 @@
         <span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
         <h1 id="logo"><a href="#">行政事务部</a></h1>
         <p id="div1" style="margin-bottom: 10px"></p>
+        <p id="div2" style="margin-bottom: 10px"></p>
     </header>
     <nav id="nav" style="margin-top: -2em;">
         <ul>
@@ -460,6 +461,11 @@
         d2.setFullYear(2022);
         d2.setMonth(8); //春季学期填写“1”，秋季学期填写“8”，因为月份是0-11,0为1月，以此类推
         d2.setDate(11); //d2 为该学期第0周周日
+        var semester;
+        if (d1.getMonth()===0 || d1.getMonth()>8){
+            semester = "秋季学期";
+        }
+        else { semester = "春季学期"}
         var rq = d1-d2;
         var n1 = Math.ceil(rq/(24*60*60*1000));
         var n2 = Math.ceil(n1/7);//计算第几周
@@ -489,9 +495,12 @@
                 day="日";
                 break;
         }
-        var t="行政"+xz+"年&nbsp&nbsp&nbsp第"+n2+"周&nbsp&nbsp&nbsp星期"+day;//格式得到的系统时间
-        var b=document.getElementById("div1");//根据id获取页面上的一个元素对象
-        b.innerHTML="<font color=#b6e9dc style='font-style: normal'>"+t+"</font>";//将格式化的时间写到div中
+        var t1="行政"+xz+"年&nbsp&nbsp&nbsp"+semester;//年份和学期
+        var t2="第"+n2+"周&nbsp&nbsp&nbsp星期"+day;//周次和星期
+        var year_semester=document.getElementById("div1");//根据id获取页面上的一个元素对象
+        year_semester.innerHTML="<font color=#b6e9dc style='font-style: normal'>"+t1+"</font>";//将格式化的时间写到div中
+        var week_day=document.getElementById("div2");//根据id获取页面上的一个元素对象
+        week_day.innerHTML="<font color=#b6e9dc style='font-style: normal'>"+t2+"</font>";//将格式化的时间写到div中
         setTimeout(showTime,1000 * 3600);//动态更新时间
     }
 </script>
