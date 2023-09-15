@@ -347,8 +347,7 @@
                 <header class="major">
                     <h3>值班表</h3>
              
-                        <div class="inner">
-                            <p>暂时以微信群为主<br />
+                        <img src="./images/排班表2023-09-05.png" alt="" width="80%" >
                 </header>
             </div>
         </section>
@@ -459,8 +458,8 @@
         var d2 = new Date();
         //每学期都需要在这里设置一下开学日期
         d2.setFullYear(2023);
-        d2.setMonth(1); //春季学期填写“1”，秋季学期填写“8”，因为月份是0-11,0为1月，以此类推
-        d2.setDate(12); //d2 为该学期第0周周日
+        d2.setMonth(8); //春季学期填写“1”，秋季学期填写“8”，因为月份是0-11,0为1月，以此类推
+        d2.setDate(10); //d2 为该学期第0周周日
         var semester;
         if (d1.getMonth()===0 || d1.getMonth()>8){
             semester = "秋季学期";
